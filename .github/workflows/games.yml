@@ -1,4 +1,4 @@
-name: build rust
+name: build rust220
 
 on:
   workflow_dispatch:
