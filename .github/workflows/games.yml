@@ -34,4 +34,4 @@ jobs:
           file: ./games/rust/Dockerfile
           push: true # Will only build if this is not here
           tags: |
-           ghcr.io/MaseZev/rust220:latest
+           ghcr.io/masezev/rust220:latest
