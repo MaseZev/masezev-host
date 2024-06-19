@@ -7,7 +7,8 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $(NF-2);exit}'`
 
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-	./steamcmd/steamcmd.sh +force_install_dir /home/container +login anonymous +app_update 258550 download_depot 258550 258554 4749201036903529297 +quit
+	./steamcmd/steamcmd.sh +force_install_dir /home/container +login anonymous +download_depot 258550 258552 803890583361838128 +quit
+	./steamcmd/steamcmd.sh +force_install_dir /home/container +login anonymous +download_depot 258550 258554 4749201036903529297 +quit
 else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
