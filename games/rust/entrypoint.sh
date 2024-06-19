@@ -7,7 +7,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $(NF-2);exit}'`
 
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-	curl -sSL "https://github.com/SteamRE/DepotDownloader/releases/tag/DepotDownloader_2.6.0/DepotDownloader-linux-x64.zip" | unzip DepotDownloader-linux-x64
+	curl -sSL "https://github.com/SteamRE/DepotDownloader/releases/tag/DepotDownloader_2.6.0/DepotDownloader-linux-x64.zip" | unzip -o -q DepotDownloader-linux-x64
 	dotnet DepotDownloader.dll -app 258550 -depot 258552 -manifest 8999940045722563700
  	dotnet DepotDownloader.dll -app 258550 -depot 258554 -manifest 4749201036903529297
 else
