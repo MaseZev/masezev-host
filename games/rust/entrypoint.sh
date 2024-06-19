@@ -7,9 +7,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $(NF-2);exit}'`
 
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-	curl -sSL "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.6.0/DepotDownloader-linux-x64.zip" | unzip -o -q DepotDownloader-linux-x64.zip
-	dotnet DepotDownloader.dll -app 258550 -depot 258552 -manifest 8999940045722563700
- 	dotnet DepotDownloader.dll -app 258550 -depot 258554 -manifest 4749201036903529297
+	./steamcmd/steamcmd.sh +force_install_dir /home/container +login anonymous +app_update 258550 +quit
 else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
