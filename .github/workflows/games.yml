@@ -1,4 +1,4 @@
-name: build rust220
+name: build rust260
 
 on:
   workflow_dispatch:
@@ -34,4 +34,4 @@ jobs:
           file: ./games/rust/Dockerfile
           push: true # Will only build if this is not here
           tags: |
-           ghcr.io/masezev/rust220:latest
+           ghcr.io/masezev/rust260:latest
