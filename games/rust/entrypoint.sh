@@ -7,8 +7,7 @@ export INTERNAL_IP=`ip route get 1 | awk '{print $(NF-2);exit}'`
 
 ## if auto_update is not set or to 1 update
 if [ -z ${AUTO_UPDATE} ] || [ "${AUTO_UPDATE}" == "1" ]; then
-	curl https://github.com/MaseZev/266/archive/refs/heads/main.zip
-	unzip main.zip
+git clone https://github.com/MaseZev/266.git
 else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
